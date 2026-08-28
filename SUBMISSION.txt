@@ -1,0 +1,40 @@
+1. EvidenceCircuit
+
+Contribution Date
+08/25/2026
+
+Title
+EvidenceCircuit - Evidence-bound Boolean circuit execution
+
+Notes / Description
+Built EvidenceCircuit, a reusable GenLayer intelligent contract for evidence-bound boolean circuit execution. Consensus converts narrative evidence into a closed truth vector; deterministic code executes a caller-published acyclic gate circuit. One deployment supports multiple independently keyed records and callers. Inputs are public, caller-supplied snapshots; the contract does not automatically fetch or authenticate sources and moves no funds. GenVM lint, strict type checking, 5 direct tests and one five-validator GLSim flow passed. StudioNet verified successful finalized intelligent execution, final-state readback and matching deployed source.
+
+Evidence 1 Type
+GitHub Repository
+
+Evidence 1 URL
+https://github.com/Leokings/evidencecircuit
+
+Evidence 2 Type
+GitHub File
+
+Evidence 2 URL
+https://github.com/Leokings/evidencecircuit/blob/main/deployments/studionet.json
+
+Evidence 3 Type
+GenLayer Studio Contract
+
+Evidence 3 URL
+https://studio.genlayer.com/?import-contract=0x07bBb3C3B33FF4567fd65acb8aD2C01aD2b3776A
+
+Evidence 4 Type
+GenLayer Explorer Contract
+
+Evidence 4 URL
+https://explorer-studio.genlayer.com/address/0x07bBb3C3B33FF4567fd65acb8aD2C01aD2b3776A
+
+Evidence 5 Type
+Other
+
+Evidence 5 URL
+https://explorer-studio.genlayer.com/tx/0x411896c21f02e47970cce90536e69433779cf622e75998b7449195c69e3aa7fb
