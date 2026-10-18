@@ -1,40 +1,42 @@
-1. EvidenceCircuit
+DRAFT — DO NOT SUBMIT YET
+Current fixes are local, not pushed or deployed. Repository remains private.
 
 Contribution Date
-08/25/2026
+Use the actual release/contribution date; this local revision is 10/18/2026.
 
 Title
-EvidenceCircuit - Evidence-bound Boolean circuit execution
+EvidenceCircuit v2 — Three-valued evidence predicate VM
 
 Notes / Description
-Built EvidenceCircuit, a reusable GenLayer intelligent contract for evidence-bound boolean circuit execution. Consensus converts narrative evidence into a closed truth vector; deterministic code executes a caller-published acyclic gate circuit. One deployment supports multiple independently keyed records and callers. Inputs are public, caller-supplied snapshots; the contract does not automatically fetch or authenticate sources and moves no funds. GenVM lint, strict type checking, 5 direct tests and one five-validator GLSim flow passed. StudioNet verified successful finalized intelligent execution, final-state readback and matching deployed source.
+Built EvidenceCircuit v2, a reusable MIT-licensed GenLayer Intelligent Contract. Builders freeze a vocabulary and acyclic gate program; validators independently classify each label as supported, contradicted or insufficient against a bounded public evidence packet, require verbatim quotes, and agree on every normalized field. Deterministic code executes NOT/AND/OR/XOR/ATLEAST2, preserving uncertainty: missing evidence cannot pass through NOT. Runs bind immutable circuit and evidence digests; replay and malformed/forged fields are rejected. Lint, strict typechecking, 33 direct tests, 9 five-validator local scenarios and 11 offline tooling tests pass. Fresh live v2 proof is pending; August receipts are historical. The contract moves no funds and interprets supplied text, not independently authenticated real-world facts.
 
 Evidence 1 Type
 GitHub Repository
 
 Evidence 1 URL
 https://github.com/Leokings/evidencecircuit
+Private — public reviewer access is a release blocker.
 
 Evidence 2 Type
-GitHub File
+GitHub File — deployed source pinned to release commit
 
 Evidence 2 URL
-https://github.com/Leokings/evidencecircuit/blob/main/deployments/studionet.json
+PENDING — current local source is not pushed.
 
 Evidence 3 Type
-GenLayer Studio Contract
+GitHub File — current release proof manifest
 
 Evidence 3 URL
-https://studio.genlayer.com/?import-contract=0x07bBb3C3B33FF4567fd65acb8aD2C01aD2b3776A
+PENDING — no current v2 live proof.
 
 Evidence 4 Type
-GenLayer Explorer Contract
+GenLayer Studio Contract
 
 Evidence 4 URL
-https://explorer-studio.genlayer.com/address/0x07bBb3C3B33FF4567fd65acb8aD2C01aD2b3776A
+PENDING — add the new v2 import-contract URL after approved deployment.
 
 Evidence 5 Type
-Other
+GenLayer Explorer Contract / key demonstration transactions
 
 Evidence 5 URL
-https://explorer-studio.genlayer.com/tx/0x411896c21f02e47970cce90536e69433779cf622e75998b7449195c69e3aa7fb
+PENDING — add new finalized v2 contract and expected-failure proof links.

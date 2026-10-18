@@ -1,50 +1,61 @@
-# Final audit
+# EvidenceCircuit v2 remediation review — 2026-10-18
 
-Reviewed: 2026-08-25
+Scope: local contracts/evidence_circuit.py, its tests, release tooling and
+documentation on branch codex/fix-review-blockers. No deployment, push,
+repository visibility change or Portal submission was performed.
 
-Scope: `contracts/evidence_circuit.py` at SHA-256 `788bb4165bf2557d3c0890b381dc9ca9d53d33c90a1eb7dff98a20d258cc8518`, its
-tests and review documents, and the exact StudioNet deployment recorded in
-`deployments/studionet.json`.
+Current source SHA-256:
+f0831e410fe29740a16dbdcdc6e4fab323180fc729811dbaa8e3e3fc9663e0de
 
-## Results
+Git blob: a8496cd27dd4b19cb460ad2b4119d47ebe10548c
+Base commit: c32e791ffe08ba27ad2c55596478f9477320041b
+The changes remain uncommitted; a blob identifier is not a pushed release commit.
 
-| Gate | Result |
-| --- | --- |
-| GenVM lint and semantic validation | PASS |
-| Strict Pyright typecheck | PASS, zero diagnostics |
-| Direct invariant tests | PASS, 5 tests |
-| Independent GLSim validators | PASS, exactly 5 validators |
-| StudioNet deployment | PASS, FINALIZED |
-| Real intelligent write | PASS, AGREE or MAJORITY_AGREE |
-| Latest-final state readback | PASS |
-| Deployed source byte equality | PASS |
-| Deployed schema required-method read | PASS |
-| Dependency and GenVM runner pins | PASS |
-| Prompt-injection boundary and JSON normalization | PASS |
-| External wallet isolation | PASS, 5 unique roles for this repository |
-| Cross-repository wallet reuse | NONE across 100 roles |
-| Private key or mnemonic in repository | NONE |
-| Workspace-wide originality scan | PASS, 161 contract sources scanned |
-| GitHub destination (2026-08-28 publication update) | Private repository: Leokings/evidencecircuit |
+## Reproduced findings and fixes
 
-StudioNet contract: 0x07bBb3C3B33FF4567fd65acb8aD2C01aD2b3776A
+| Finding | Severity | Local resolution |
+| --- | --- | --- |
+| EVC-1: validator checked truth_mask but stored unbound leader true_inputs | High | Strict complete per-label assessment normalization; canonical comparison of every field; derive masks/label lists deterministically; normalize again before storage |
+| EVC-2: unsupported input was false, allowing NOT to create a positive result from absence | High | Three-valued inputs and gates; insufficient evidence stays UNKNOWN and output null; neither output_is expectation authorizes unknown |
+| Missing current lifecycle/adversarial live proof | Review blocker | Release tests and pending manifest prepared; still requires authorized fresh deployment |
+| Private repository / unpushed fixes | Evidence blocker | Unchanged, pending owner approval; do not submit as public evidence |
 
-Deployment transaction: 0x70d389c680943a43e94f6a2f914f26e2e88f56b5c10685cc77c67156e7eda600
+Additional hardening: exact quote membership and bounds, bounded pre-parse JSON
+and serialized records, immutable circuit/evidence digests, explicit v2 schema.
+The old direct test treating missing evidence as false was migrated to UNKNOWN;
+its missing-evidence safety case was retained and strengthened.
 
-Intelligent transaction: 0x411896c21f02e47970cce90536e69433779cf622e75998b7449195c69e3aa7fb
+## Local verification
 
-Observed live state: `{"output":true,"true_input_count":3}`
+- GenVM AST lint and SDK validation: PASS.
+- Strict Pyright: PASS, zero diagnostics.
+- Direct contract tests: 33 PASS, including forged extra fields, changed valid
+  quotes, unknown vs explicit contradiction, replay/namespaces, malformed
+  programs, parsing bounds and exhaustive truth tables for each supported gate.
+- GLSim: 9 PASS, five mocked validators per semantic transaction; all gate
+  operators, definite true/false, unknown, NOT, replay and invalid programs.
+- Offline journal tests: 11 PASS; hash before finality wait, pending resume,
+  request/source binding, uncertain broadcast, finalized errors, lock/network
+  checks and checkpoint survival of gltest artifact cleanup.
 
-## Consensus review
+These are local native-Python/mocked-model checks, not hosted GenVM or real
+heterogeneous-model consensus evidence. The opt-in live test was not executed.
+Strict exact quote agreement may reduce liveness; it is not relaxed silently.
 
-Validators independently re-execute the bounded semantic task and the custom validator rejects malformed or materially different output.
+## History and gates
 
-## Review conclusion
+The August v1 audit is preserved at docs/history/AUDIT_2026-08-25.md.
+Its original no-blockers conclusion is superseded by the reproduced findings.
+The v1 manifest remains at deployments/historical/studionet-v1.json. Its source
+hash and positive live smoke do not prove any v2 change.
 
-No known source, build, test, consensus, wallet, secret, dependency, provenance,
-or repository-hygiene blocker remains. Human program review can still apply its
-own policy judgment; this audit does not promise acceptance.
+Technical readiness: PASS for the scoped local remediation; fresh live runtime,
+model behavior and compatibility remain unproven, so not production-certified.
+Distinctiveness: PASS only against the 22 prior submissions and selected peer;
+do not also submit PredicateGraphInterlock. Wider cohort/global novelty unproven.
+Evidence readiness: FAIL until an approved pushed/public release and new live
+proof exist. deployments/studionet.json intentionally says NOT_DEPLOYED.
 
-Publication note: private GitHub evidence requires reviewer access. The original
-StudioNet source and wallets are unchanged. CI uses the server's GET /health route
-for readiness; /api is a POST-only JSON-RPC route. No live wallet keys are used by CI.
+Before release follow REVIEW_CHECKLIST.md and deployments/README.md. A real
+model injection case, negative/unknown cases, finalized expected failures,
+readbacks and exact deployed source must all be recorded truthfully.

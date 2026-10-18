@@ -1,33 +1,22 @@
-Project name: EvidenceCircuit
+# EvidenceCircuit — Portal draft, not ready to submit
+
+Use SUBMISSION.txt for the form-shaped draft. The current local v2 source is not
+pushed or deployed. Do not attach the old v1 contract as proof of these fixes.
+
+Title: EvidenceCircuit v2 — Three-valued evidence predicate VM
 
 Category: Intelligent Contracts
 
-Batch: A
+Repository (currently private): https://github.com/Leokings/evidencecircuit
 
-One-line description: Evidence-bound Boolean circuit execution.
+The proposed note describes local results only. Before submission, push and
+deploy the reviewed release with approval, run the live cases, and replace the
+note's pending-proof sentence with the actual finalized outcomes.
 
-What it does: Consensus converts narrative evidence into a closed truth vector; deterministic code executes a caller-published acyclic gate circuit.
+Required evidence: public repository, source pinned to the deployed commit, the
+new release manifest, new Studio/Explorer contract link, and the key successful
+and expected-failure transaction links. No new contract URL is available yet.
 
-Why GenLayer: GenLayer consensus performs the bounded semantic step, then deterministic contract code executes and stores the mechanism-specific result.
-
-Reusable: Yes. One deployment supports many independently keyed records and callers; the live fixture is only an example.
-
-Repository: https://github.com/Leokings/evidencecircuit (private; reviewers require read access).
-
-Contract source: contracts/evidence_circuit.py
-
-Source SHA-256: 788bb4165bf2557d3c0890b381dc9ca9d53d33c90a1eb7dff98a20d258cc8518
-
-StudioNet contract: https://explorer-studio.genlayer.com/address/0x07bBb3C3B33FF4567fd65acb8aD2C01aD2b3776A
-
-Deployment transaction: https://explorer-studio.genlayer.com/tx/0x70d389c680943a43e94f6a2f914f26e2e88f56b5c10685cc77c67156e7eda600
-
-Intelligent transaction: https://explorer-studio.genlayer.com/tx/0x411896c21f02e47970cce90536e69433779cf622e75998b7449195c69e3aa7fb
-
-Verification: GenVM lint PASS; strict typecheck PASS; 5 direct tests PASS; five-validator GLSim PASS; finalized StudioNet intelligent write and latest-final readback PASS; exact deployed-source and schema verification PASS.
-
-Originality: Compared with 161 workspace contract sources. Nearest pre-existing structural score is 0.187706; mechanism and source hash are distinct.
-
-Data boundary: Caller-supplied public data only. No external source fetching, funds, identity attestation, legal effect, or private-data guarantee.
-
-Plain-text portal fields: SUBMISSION.txt. Notes / Description is within the 1,000-character form limit.
+Old August evidence is retained in deployments/historical/studionet-v1.json.
+It proves only the old source and its recorded positive smoke case. It must not
+be represented as v2 gate/uncertainty/adversarial testing.
