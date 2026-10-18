@@ -1,42 +1,43 @@
-DRAFT — DO NOT SUBMIT YET
-Current fixes are local, not pushed or deployed. Repository remains private.
-
 Contribution Date
-Use the actual release/contribution date; this local revision is 10/18/2026.
+10/18/2026
 
 Title
 EvidenceCircuit v2 — Three-valued evidence predicate VM
 
 Notes / Description
-Built EvidenceCircuit v2, a reusable MIT-licensed GenLayer Intelligent Contract. Builders freeze a vocabulary and acyclic gate program; validators independently classify each label as supported, contradicted or insufficient against a bounded public evidence packet, require verbatim quotes, and agree on every normalized field. Deterministic code executes NOT/AND/OR/XOR/ATLEAST2, preserving uncertainty: missing evidence cannot pass through NOT. Runs bind immutable circuit and evidence digests; replay and malformed/forged fields are rejected. Lint, strict typechecking, 33 direct tests, 9 five-validator local scenarios and 11 offline tooling tests pass. Fresh live v2 proof is pending; August receipts are historical. The contract moves no funds and interprets supplied text, not independently authenticated real-world facts.
+EvidenceCircuit v2 is an MIT-licensed reusable GenLayer predicate VM. Builders freeze up to 12 evidence labels and 24 acyclic NOT/AND/OR/XOR/ATLEAST2 gates. Validators independently classify every label against a bounded public text packet, require verbatim quotes, and agree on the complete normalized assessment vector. Deterministic code executes three-valued logic, binds circuit/evidence digests, and stores caller-scoped immutable runs. Missing evidence stays UNKNOWN, even through NOT, and cannot satisfy either Boolean authorization check.
+
+A fresh StudioNet deployment finalized six real-model cases covering support, contradiction, missing evidence, negation and prompt injection. Replay and invalid references finalized as expected failures. Includes direct tests, five-validator local scenarios, exact deployed-source proof and a wallet-free read-only verifier. It interprets supplied public text, not independently authenticated facts, and moves no funds.
 
 Evidence 1 Type
 GitHub Repository
 
 Evidence 1 URL
 https://github.com/Leokings/evidencecircuit
-Private — public reviewer access is a release blocker.
 
 Evidence 2 Type
-GitHub File — deployed source pinned to release commit
+GitHub File — exact deployed source
 
 Evidence 2 URL
-PENDING — current local source is not pushed.
+https://github.com/Leokings/evidencecircuit/blob/139bc262a628bdc96851b30f900f7953e8b20a99/contracts/evidence_circuit.py
 
 Evidence 3 Type
-GitHub File — current release proof manifest
+GitHub File — finalized live release proof
 
 Evidence 3 URL
-PENDING — no current v2 live proof.
+https://github.com/Leokings/evidencecircuit/blob/main/deployments/studionet.json
 
 Evidence 4 Type
 GenLayer Studio Contract
 
 Evidence 4 URL
-PENDING — add the new v2 import-contract URL after approved deployment.
+https://studio.genlayer.com/?import-contract=0xd60070656AeC65E1809A42627144CF4d3576C790
 
 Evidence 5 Type
-GenLayer Explorer Contract / key demonstration transactions
+GenLayer Explorer Contract
 
 Evidence 5 URL
-PENDING — add new finalized v2 contract and expected-failure proof links.
+https://explorer-studio.genlayer.com/address/0xd60070656AeC65E1809A42627144CF4d3576C790
+
+Submission owner action
+Use only after the repository is public and logged-out evidence links pass. Key successful and expected-failure transactions are recorded inside Evidence 3; no separate evidence entry is needed for every transaction. No Portal contribution has been submitted by this tool.

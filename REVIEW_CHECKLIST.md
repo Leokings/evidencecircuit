@@ -1,23 +1,24 @@
-# Review checklist — current v2, 2026-10-18
+# EvidenceCircuit v2 release checklist — 2026-10-18
 
-- [x] Reproduced high-severity consensus-field and missing-evidence/NOT bugs fixed
-- [x] Pinned runner; GenVM lint and strict typecheck pass locally
-- [x] 33 direct contract tests, including forged leaders and complete gate truth tables
-- [x] 9 local five-validator mocked scenarios; output/replay/invalid-program checks
-- [x] 11 offline journal tests, including pending resume and uncertain broadcast
-- [x] Bounded strict JSON, exact quotes, three-valued output, immutable digests
-- [x] API/schema migration and public-calldata trust boundary documented
-- [x] Historical v1 proof separated from current NOT_DEPLOYED manifest
-- [x] Scoped comparison against 22 submitted ICs and the selected peer
-- [ ] Verify current network/runner/client compatibility with an approved probe
-- [ ] Push a reviewed source commit after owner approval
-- [ ] Fresh repository-specific wallets and approved live deployment
-- [ ] Finalized real-model positive, negative, unknown, NOT and injection cases
-- [ ] Finalized expected replay rejection and final-state/source/schema readback
-- [ ] Capture commit, blob hash, transactions, votes and outcomes in a new manifest
-- [ ] Make repository public only with explicit approval; verify links logged out
-- [ ] Replace draft Portal evidence links with the actual v2 release evidence
+- [x] High-severity validator-field and missing-evidence/NOT flaws fixed
+- [x] Pinned runtime; GenVM lint and strict typecheck
+- [x] 33 direct tests, including forged leaders and three-valued truth tables
+- [x] 9 local five-validator mocked scenarios
+- [x] 15 offline release/journal/export tests
+- [x] Linux raw-clock harness fixed; unchanged deadline tests remain enforced
+- [x] Source committed and pushed before deployment
+- [x] Fresh disposable test-only wallet outside the workspace
+- [x] Live pinned-runtime probe: finalized deploy/write/read and source match
+- [x] Six real-model cases finalized on v2
+- [x] Replay and invalid-reference EXPECTED_FAILURE receipts
+- [x] Exact live source/schema, case and receipt readback
+- [x] Wallet-free read-only verifier executed against the live release
+- [x] Real vote maps preserved; no fabricated 5/5 or production claim
+- [x] Public proof exporter omits provider/plugin secrets
+- [x] Historical v1 proof preserved; API/schema migration documented
+- [x] Scoped distinctiveness comparison against 22 prior submissions
+- [ ] Public repository and logged-out evidence link verification
 - [ ] Owner submits the contribution
 
-Local success is not a live GenVM or heterogeneous-model certification.
-No visibility change, push, deployment or Portal action was performed here.
+Keep the source frozen during Portal review. Native testnet consensus and this
+fixture corpus are not production safety or global originality certifications.

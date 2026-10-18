@@ -18,8 +18,9 @@ alone, is the relevant model check.
 
 Prompts treat labels/evidence as untrusted. Local adversarial mocks establish
 parsing and validator rejection, not resistance of actual heterogeneous models
-to prompt injection. Positive/negative/uncertainty/injection tests must be rerun
-on the approved live deployment. Exact quote equality may cause disagreement;
+to prompt injection. Positive/negative/uncertainty/injection fixtures passed on
+the new live StudioNet release; broader adversarial safety remains unproven.
+Exact quote equality may cause disagreement;
 there is no weaker fallback that silently accepts an unvalidated result.
 
 This contract has no funds or partially committed pending case. An invalid or

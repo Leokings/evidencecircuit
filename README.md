@@ -3,10 +3,29 @@
 A reusable GenLayer predicate interpreter: validators classify bounded public
 evidence, then deterministic code executes an immutable acyclic gate program.
 
-Status (2026-10-18): local remediation, not pushed or deployed. Lint and strict
-typechecking pass; 33 contract/direct tests, 9 five-validator GLSim scenarios,
-and 11 offline journal tests pass. Models are mocked in these local tests.
+Status (2026-10-18): v2 deployed and live-verified on StudioNet. Six real-model
+cases and two expected-failure guards finalized; every final case, receipt,
+source and schema was independently re-read without a wallet. Lint, strict
+typechecking, 33 direct tests, 9 five-validator local scenarios and 15 offline
+tooling tests pass. The local models are mocked; the separate live cases are not.
 The August deployment is historical v1, not proof of this source.
+
+Studio: https://studio.genlayer.com/?import-contract=0xd60070656AeC65E1809A42627144CF4d3576C790
+
+Explorer: https://explorer-studio.genlayer.com/address/0xd60070656AeC65E1809A42627144CF4d3576C790
+
+Exact source commit: 139bc262a628bdc96851b30f900f7953e8b20a99.
+See deployments/studionet.json for the complete sanitized proof, including
+actual MAJORITY_AGREE vote maps, idle/disagree voters and expected failures.
+
+| Live case | Final output |
+| --- | --- |
+| Explicit support | TRUE |
+| Explicit contradiction | FALSE |
+| Missing evidence | UNKNOWN |
+| NOT on missing evidence | UNKNOWN |
+| NOT on explicit contradiction | TRUE |
+| Embedded prompt-injection attempt | UNKNOWN |
 
 ## What it does
 
@@ -54,7 +73,7 @@ output_is(run_id: str, expected: bool) -> bool
 For a wallet-free first exercise, run the direct tests below and inspect the
 explicit positive, negative, missing-evidence, and forged-leader cases in
 tests/direct/test_review_blockers_20261018.py. These are simulations, not a live
-app. No new public v2 contract address exists yet.
+app. The deployed v2 address and public inspection links are above.
 
 ## Local verification
 
@@ -73,6 +92,16 @@ The last two commands run separately. Public-network tests remain skipped by
 default. Do not enable RUN_STUDIONET without release approval; see
 deployments/README.md for preflight, fresh-wallet requirements and checkpoints.
 
+Inspect the existing deployment with NO wallet, key, environment file or write:
+
+```text
+python scripts/verify_studionet.py
+```
+
+This checks the current chain, exact deployed source/schema, all six final
+records and all 11 primary receipts. It preserves actual votes and explicitly
+distinguishes the two expected execution errors from successful writes.
+
 ## Compatibility and boundaries
 
 v2 is a breaking response-schema revision. The v1 true_inputs-only model format
@@ -89,4 +118,5 @@ Exact quote agreement is deliberately strict and may reduce model liveness.
 
 See AUDIT.md, DESIGN.md, SECURITY.md, SOURCE_POLICY.md, ORIGINALITY.md,
 REVIEW_CHECKLIST.md and the draft SUBMISSION.txt. The current deployment
-manifest explicitly records NOT_DEPLOYED.
+manifest records the verified v2 release. StudioNet availability/persistence and
+production-grade heterogeneous-model independence are not guaranteed.

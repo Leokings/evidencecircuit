@@ -1,22 +1,26 @@
-# EvidenceCircuit — Portal draft, not ready to submit
+# EvidenceCircuit v2 — release submission
 
-Use SUBMISSION.txt for the form-shaped draft. The current local v2 source is not
-pushed or deployed. Do not attach the old v1 contract as proof of these fixes.
+Form fields: SUBMISSION.txt. Description: 968/1,000 characters.
+Final contribution submission remains the owner's action.
 
-Title: EvidenceCircuit v2 — Three-valued evidence predicate VM
+## Live evidence
 
-Category: Intelligent Contracts
+- Repository: https://github.com/Leokings/evidencecircuit
+- Pinned deployed source: https://github.com/Leokings/evidencecircuit/blob/139bc262a628bdc96851b30f900f7953e8b20a99/contracts/evidence_circuit.py
+- Release manifest: https://github.com/Leokings/evidencecircuit/blob/main/deployments/studionet.json
+- Studio: https://studio.genlayer.com/?import-contract=0xd60070656AeC65E1809A42627144CF4d3576C790
+- Explorer: https://explorer-studio.genlayer.com/address/0xd60070656AeC65E1809A42627144CF4d3576C790
 
-Repository (currently private): https://github.com/Leokings/evidencecircuit
+The manifest contains six finalized real-model cases, nine successful primary
+transactions and two EXPECTED_FAILURE transactions, final-state snapshots,
+source/commit/blob/runtime identity, actual vote maps and a separate runner probe.
+Idle/disagree votes are preserved; do not relabel the result as unanimous 5/5.
 
-The proposed note describes local results only. Before submission, push and
-deploy the reviewed release with approval, run the live cases, and replace the
-note's pending-proof sentence with the actual finalized outcomes.
+The key-free verifier was run against the live deployment:
+```text
+python scripts/verify_studionet.py
+```
 
-Required evidence: public repository, source pinned to the deployed commit, the
-new release manifest, new Studio/Explorer contract link, and the key successful
-and expected-failure transaction links. No new contract URL is available yet.
-
-Old August evidence is retained in deployments/historical/studionet-v1.json.
-It proves only the old source and its recorded positive smoke case. It must not
-be represented as v2 gate/uncertainty/adversarial testing.
+Public visibility and logged-out links must be verified before using these
+fields. Do not edit evidenced source while the Portal contribution is reviewed.
+The August v1 audit and manifest are historical, not proof of v2.
