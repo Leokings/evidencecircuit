@@ -71,8 +71,9 @@ are established. StudioNet availability/state persistence is not guaranteed.
 Technical readiness: PASS for the documented local and live StudioNet scope.
 Distinctiveness: PASS against the 22 prior submissions and selected peer;
 never submit PredicateGraphInterlock as a distinct companion mechanism.
-Evidence readiness: live proof PASS; public visibility and logged-out evidence
-link verification remain the final publication checks before Portal submission.
+Evidence readiness: PASS. The repository is public; repository, pinned source,
+proof, Studio and Explorer links returned HTTP 200 without authentication.
+The anonymously fetched pinned source also matched the deployed SHA-256.
 
 Historical v1 evidence is retained at deployments/historical/studionet-v1.json
 and docs/history/AUDIT_2026-08-25.md. The old no-blockers conclusion was superseded;

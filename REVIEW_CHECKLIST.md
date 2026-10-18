@@ -17,7 +17,7 @@
 - [x] Public proof exporter omits provider/plugin secrets
 - [x] Historical v1 proof preserved; API/schema migration documented
 - [x] Scoped distinctiveness comparison against 22 prior submissions
-- [ ] Public repository and logged-out evidence link verification
+- [x] Public repository and logged-out evidence link verification
 - [ ] Owner submits the contribution
 
 Keep the source frozen during Portal review. Native testnet consensus and this

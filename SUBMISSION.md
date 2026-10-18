@@ -7,7 +7,7 @@ Final contribution submission remains the owner's action.
 
 - Repository: https://github.com/Leokings/evidencecircuit
 - Pinned deployed source: https://github.com/Leokings/evidencecircuit/blob/139bc262a628bdc96851b30f900f7953e8b20a99/contracts/evidence_circuit.py
-- Release manifest: https://github.com/Leokings/evidencecircuit/blob/main/deployments/studionet.json
+- Release manifest: https://github.com/Leokings/evidencecircuit/blob/0ce9103ce3d2222bb32d90f9e2b911d433234ba5/deployments/studionet.json
 - Studio: https://studio.genlayer.com/?import-contract=0xd60070656AeC65E1809A42627144CF4d3576C790
 - Explorer: https://explorer-studio.genlayer.com/address/0xd60070656AeC65E1809A42627144CF4d3576C790
 

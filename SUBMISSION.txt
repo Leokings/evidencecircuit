@@ -25,7 +25,7 @@ Evidence 3 Type
 GitHub File — finalized live release proof
 
 Evidence 3 URL
-https://github.com/Leokings/evidencecircuit/blob/main/deployments/studionet.json
+https://github.com/Leokings/evidencecircuit/blob/0ce9103ce3d2222bb32d90f9e2b911d433234ba5/deployments/studionet.json
 
 Evidence 4 Type
 GenLayer Studio Contract
